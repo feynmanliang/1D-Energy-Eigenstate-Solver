@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2013.1.14)  19 JAN 2013 13:13
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2013.1.14)  19 JAN 2013 18:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -204,6 +204,13 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
+(/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
 (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
@@ -226,18 +233,18 @@ Package ifvtex Info: VTeX not detected.
 ) (./writeup.aux)
 \openout1 = `writeup.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
 \c@lstlisting=\count118
 
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -335,132 +342,179 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+LaTeX Font Info:    Try loading font information for U+msa on input line 14.
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 14.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+Overfull \hbox (30.32065pt too wide) in paragraph at lines 70--75
+[]\OT1/cmr/m/n/10 In or-der to nu-mer-i-cally ap-prox-i-mate the limit be-hav-i
+or of $\OML/cmm/m/it/10  \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 )$,
+ we de-fine a func-tion \OT1/cmtt/m/n/10 shooting[]solver[]1d[]finite
+ []
+
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<sage-plots-for-writeup.tex/plot-0.pdf, id=21, 578.16pt x 433.62pt>
+<sage-plots-for-writeup.tex/plot-0.pdf, id=22, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-0.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-0.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-0.pdf used on input li
-ne 149.
+ne 172.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
 
-<sage-plots-for-writeup.tex/plot-1.pdf, id=22, 578.16pt x 433.62pt>
+<sage-plots-for-writeup.tex/plot-1.pdf, id=23, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-1.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-1.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-1.pdf used on input li
-ne 157.
+ne 182.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
 
-<sage-plots-for-writeup.tex/plot-2.pdf, id=23, 578.16pt x 433.62pt>
+<sage-plots-for-writeup.tex/plot-2.pdf, id=24, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-2.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-2.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-2.pdf used on input li
-ne 165.
+ne 192.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
- [3 <./sage-plots-for-writeup.tex/plot-0.pdf> <./sage-plots-for-writeup.tex/plo
-t-1.pdf>]
-<sage-plots-for-writeup.tex/plot-3.pdf, id=113, 578.16pt x 433.62pt>
+ [3 <./sage-plots-for-writeup.tex/plot-0.pdf>] <sage-plots-for-writeup.tex/plot
+-3.pdf, id=65, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-3.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-3.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-3.pdf used on input li
-ne 173.
+ne 202.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
 
-<sage-plots-for-writeup.tex/plot-4.pdf, id=114, 578.16pt x 433.62pt>
+<sage-plots-for-writeup.tex/plot-4.pdf, id=66, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-4.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-4.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-4.pdf used on input li
-ne 181.
+ne 212.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
- [4 <./sage-plots-for-writeup.tex/plot-2.pdf> <./sage-plots-for-writeup.tex/plo
-t-3.pdf>]
-<sage-plots-for-writeup.tex/plot-5.pdf, id=199, 578.16pt x 433.62pt>
+ [4 <./sage-plots-for-writeup.tex/plot-1.pdf> <./sage-plots-for-writeup.tex/plo
+t-2.pdf>]
+<sage-plots-for-writeup.tex/plot-5.pdf, id=145, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-5.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-5.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-5.pdf used on input li
-ne 189.
+ne 222.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
- [5 <./sage-plots-for-writeup.tex/plot-4.pdf> <./sage-plots-for-writeup.tex/plo
-t-5.pdf>]
-<sage-plots-for-writeup.tex/plot-6.pdf, id=287, 578.16pt x 433.62pt>
+ [5 <./sage-plots-for-writeup.tex/plot-3.pdf> <./sage-plots-for-writeup.tex/plo
+t-4.pdf>]
+<sage-plots-for-writeup.tex/plot-6.pdf, id=225, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-6.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-6.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-6.pdf used on input li
-ne 206.
+ne 253.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
-
-<sage-plots-for-writeup.tex/plot-7.pdf, id=288, 578.16pt x 433.62pt>
+ [6 <./sage-plots-for-writeup.tex/plot-5.pdf>]
+<sage-plots-for-writeup.tex/plot-7.pdf, id=271, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-7.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-7.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-7.pdf used on input li
-ne 216.
+ne 265.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
- [6 <./sage-plots-for-writeup.tex/plot-6.pdf> <./sage-plots-for-writeup.tex/plo
+ [7 <./sage-plots-for-writeup.tex/plot-6.pdf> <./sage-plots-for-writeup.tex/plo
 t-7.pdf>]
+<sage-plots-for-writeup.tex/plot-8.pdf, id=358, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-8.pdf Graphic file (type pdf)
 
-Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-8.pdf on
- page 7 does not exist. Plot command is on input line 231.
+<use sage-plots-for-writeup.tex/plot-8.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-8.pdf used on input li
+ne 300.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+
+<sage-plots-for-writeup.tex/plot-9.pdf, id=359, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-9.pdf Graphic file (type pdf)
+
+<use sage-plots-for-writeup.tex/plot-9.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-9.pdf used on input li
+ne 323.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+ [8 <./sage-plots-for-writeup.tex/plot-8.pdf>]
+<sage-plots-for-writeup.tex/plot-10.pdf, id=407, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-10.pdf Graphic file (type pdf)
+
+<use sage-plots-for-writeup.tex/plot-10.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-10.pdf used on input l
+ine 383.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+ [9 <./sage-plots-for-writeup.tex/plot-9.pdf>]
+Overfull \hbox (3.26875pt too wide) in paragraph at lines 388--388
+[] \OT1/cmtt/m/n/10 plot_inf_sq_eigenstate(2, 0.5, shooting_solver_1d_finite(0,
+ 1, 0.5, 0.6179, 0.0001), \ 
+ []
 
 
-Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-9.pdf on
- page 7 does not exist. Plot command is on input line 252.
+Overfull \hbox (24.26857pt too wide) in paragraph at lines 389--389
+[]                        \OT1/cmtt/m/n/10 title="First Exctited Energy Eigenfu
+nction, $\infty$-quantum well")[] 
+ []
 
+<sage-plots-for-writeup.tex/plot-11.pdf, id=457, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-11.pdf Graphic file (type pdf)
 
-Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-10.pdf o
-n page 7 does not exist. Plot command is on input line 273.
+<use sage-plots-for-writeup.tex/plot-11.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-11.pdf used on input l
+ine 394.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+ [10 <./sage-plots-for-writeup.tex/plot-10.pdf> <./sage-plots-for-writeup.tex/p
+lot-11.pdf>] [11]
+<sage-plots-for-writeup.tex/plot-12.pdf, id=578, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-12.pdf Graphic file (type pdf)
 
+<use sage-plots-for-writeup.tex/plot-12.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-12.pdf used on input l
+ine 469.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
 
-Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-11.pdf o
-n page 7 does not exist. Plot command is on input line 282.
+<sage-plots-for-writeup.tex/plot-13.pdf, id=579, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-13.pdf Graphic file (type pdf)
 
-[7] [8]
-
-Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-12.pdf o
-n page 9 does not exist. Plot command is on input line 350.
-
-
-Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-13.pdf o
-n page 9 does not exist. Plot command is on input line 361.
-
+<use sage-plots-for-writeup.tex/plot-13.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-13.pdf used on input l
+ine 480.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+ [12 <./sage-plots-for-writeup.tex/plot-12.pdf>]
 *********************************************************************
-
-Package sagetex Warning: there were undefined Sage formulas and/or plots.
-Run Sage on writeup.sagetex.sage, and then run LaTeX on writeup.tex again.
-
-*********************************************************************
-[9] (./writeup.aux) ) 
+[13 <./sage-plots-for-writeup.tex/plot-13.pdf>] (./writeup.aux) ) 
 Here is how much of TeX's memory you used:
- 4444 strings out of 493488
- 62958 string characters out of 3146892
- 141163 words of memory out of 3000000
- 7671 multiletter control sequences out of 15000+200000
- 10232 words of font info for 38 fonts, out of 3000000 for 9000
+ 4548 strings out of 493488
+ 65112 string characters out of 3146892
+ 142586 words of memory out of 3000000
+ 7760 multiletter control sequences out of 15000+200000
+ 12712 words of font info for 50 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,12n,34p,300b,273s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
-10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on writeup.pdf (9 pages, 261192 bytes).
+ 38i,12n,34p,251b,269s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb>
+Output written on writeup.pdf (13 pages, 375045 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
+ 718 PDF objects out of 1000 (max. 8388607)
+ 266 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

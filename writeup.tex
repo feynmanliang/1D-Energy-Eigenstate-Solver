@@ -2,6 +2,7 @@
 \usepackage{sagetex}
 \usepackage{float}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{listings}
 \usepackage[margin=1in]{geometry}
 
@@ -13,7 +14,6 @@
 \maketitle
 
 \section{Introduction}
-
 Solutions to the Schrodinger equation can oftentimes be approximated using numerical
 methods. This is especially convenient for dealing with potentials where analytical 
 solutions may very difficult to find or not exist. Here, we will investigate numerical 
@@ -35,24 +35,30 @@ Rewriting the Schrodinger equation in a dimensionless form:
 
 where:
 
-\begin{equation*}
+\begin{equation}\label{DimensionlessSubstitutions}
     u = \frac{x}{a},\;\;
     \epsilon = \frac{E}{V_{0}},\;\;
     \beta = \frac{2ma^{2}V_0}{\hbar^2}
-\end{equation*}
+\end{equation}
 
 Since we expect energies below $V_0$ to be bound, there is a boundary condition
-$\psi(u) = 0 (x \rightarrow \infty)$. This boundary condition problem can be made
-suitable for numerical computation by employing the shooting method, which reduces
-the problem into an initial value problem. Using the shooting method, we will guess 
-and successively adjust the energy term $\epsilon$ until $\psi(u)$ satisfies
-the desired asymptotic behavior. Values of $\epsilon$ which satisfy the boundary
-conditions are allowed energy eigenvalues for the $\widetilde{V}(u)$ potential
+$\psi(u) = 0 (x \rightarrow \infty)$. This boundary condition problem can be
+made suitable for numerical computation by employing the shooting method, which
+reduces the problem into an initial value problem (Note that unlike traditional
+IVPs, here we are choosing values for $\epsilon$ rather than $\psi(0)$ and
+dealing with asymptotic boundary conditions). Using the shooting method, we
+will guess and successively adjust the energy term $\epsilon$ until $\psi(u)$
+satisfies the desired asymptotic behavior. Values of $\epsilon$ which satisfy
+the boundary conditions are allowed energy eigenvalues for the
+$\widetilde{V}(u)$ potential
 in \eqref{FiniteBoxPotential}.
 
 \section{Numerical Approximation}
 
-Two global variables we will use are $\beta$ (set to 64, see ER Appendix G) and
+The accompanying code was run on Sage 5.5 and Python 3.3.0.  The Sage\TeX\,
+package is used to show excecution results in-line within \LaTeX.
+
+Two global variables we will use are $\beta$ (=64, see ER Appendix G) and
 the potential function $\widetilde{V}(u)$. These are specified at the top of
 the program:
 
@@ -62,7 +68,7 @@ the program:
 \end{sageblock}
 
 In order to numerically approximate the limit behavior of $\psi(u)$, we define
-a function \texttt{shooting\_solver} to numerically integrate the dimensionless
+a function \texttt{shooting\_solver\_1d\_finite} to numerically integrate the dimensionless
 Schrodinger equation \eqref{FiniteBoxSchrodinger}. Our implementation uses the
 Forward Euler method, which computes the quadrature using iterative first order
 Taylor approximations:
@@ -72,13 +78,13 @@ Taylor approximations:
     \psi(u_{i+1}) &= \psi(u_i) + \Delta u \cdot \phi(u_i)
 \end{align}
 
-\texttt{shooting\_solver} takes initial values \texttt{psi0} and \texttt{dpsi0} ($\psi$ and
-$\frac{d\psi}{du}$ at $x_0 = 0$), a guess for \texttt{epsilon},
-an iteration step size \texttt{delta\_u}. A list of tuples $(u, \psi(u))$ is
-returned for the range $[$0, \texttt{uf}$]$.
+The function \texttt{shooting\_solver\_1d\_finite} takes initial values \texttt{psi0} and
+\texttt{dpsi0} ($\psi$ and $\frac{d\psi}{du}$ at $x_0 = 0$), a guess for
+\texttt{epsilon}, an iteration step size \texttt{delta\_u}. A list of tuples
+$(u, \psi(u))$ is returned for the range $[$0, \texttt{uf}$]$.
 
 \begin{sageblock}
-def shooting_solver_finite_well(psi0, dpsi0, uf, epsilon, delta_u):
+def shooting_solver_1d_finite(psi0, dpsi0, uf, epsilon, delta_u):
     num_steps = (uf - 0) / delta_u
     data = [(0, psi0, dpsi0)] # initialize data array
     for i in range(num_steps): # perform forward euler
@@ -101,14 +107,20 @@ a simulation between $(0, \texttt{uf})$ will also yield the result between
 $(-\texttt(uf), 0)$ by simply mirroring across the y-axis and multiplying
 $\psi(u)$ by $-1$ if the eigenfunction is of odd parity.
 
-\emph{\textbf{Note}: This plotting routing assumes the data approximates an
-eigenfunction of definite parity.}
+The \texttt{plot\_data\_finite\_well} function takes a list \texttt{data} of
+(u, $\psi(u)$) 2-tuples, the wavenumber $\texttt{n}$ to label the y-axis with,
+a \texttt{title} string, and uses the matplotlib library to generates a plot of
+\texttt{data} with dashed lines indicating the boundaries of the finite well
+potential
+\eqref{FiniteBoxPotential}.
 
+\emph{\textbf{Note}: This plotting routine assumes the data approximates an
+eigenfunction of definite parity.}
 \begin{sageblock}
-import matplotlib.pyplot as plt # use matplotlib
-def plot_data(data, n, title):
-    # mirror data based on parity, assumes eigenfunction 
-    # has a definite parity
+import matplotlib.pyplot as plt
+def plot_finite_well(data, n, title, chained=False):
+    if not chained: plt.clf() # only clear if not part of chained call
+    # mirror data across origin, assumes data has a definite parity
     (u, psi0) = data[0]
     if psi0 == 0: # node at 0, odd
         data = map(lambda x: (-x[0], -x[1]), data)[::-1] + data
@@ -116,7 +128,6 @@ def plot_data(data, n, title):
         data = map(lambda x: (-x[0], x[1]), data)[::-1] + data
 
     u, psi = [[x[i] for x in data] for i in (0,1)]
-    fig = plt.figure()
     plt.plot(u, psi)
     plt.title(title)
     plt.xlabel('$u$')
@@ -125,167 +136,276 @@ def plot_data(data, n, title):
     plt.axvline(x=0.5, linestyle='dashed', color='black')
     plt.axvline(x=-0.5, linestyle='dashed', color='black')
     plt.grid(True)
-
-    # plt.savefig
-    # uncomment if plotting from sagetex
+    plt.legend()
     plt.save = plt.savefig
     return plt 
 \end{sageblock}
 
 \section{Simulation and Results}
-\subsection{Ground State of Finite Quantum Well}
-The simulation uses initial conditions of $\psi = 1.0, \frac{d\psi(u)}{du} = 0$ at $x_0 = 0$.
-This is a safe assumption to make because functions of definite odd parity have anti-node at $x = 0$
-and will necessarily have $\frac{d\psi(u)}{du}(0) = 0$. By choosing $\psi(0) = 1.0$, we specify that
-the $\psi(u)$ will have amplitude 1.0.
+\subsection{Ground State of Finite Quantum Well} Because the symmetric
+potential implies energy eigenfunctions of definite parity and the ground state
+eigenfunction is odd, $\frac{d\psi(u)}{du}$ must necessarily be 0 at $x_0 = 0$. 
 
-Using these initial conditions and adjusting estimates to $\epsilon$, we find:
+Rather than worry about the normalization conditions for $\psi(u)$
+$\left(\int_{-\infty}^{\infty}\psi^\dag\psi du = 1\right)$, we recognize that
+the normalized eigenfunction is simply the unnormalized eigenfunction
+multiplied by a constant normalization factor. We can compute the normalization
+factor given the unormalized eigenfunction, so we make the assumption that
+$\psi = 1.0$ at $x_0 = 0$, recognizing that we are working with the unnormalized
+eigenfunction. This does not affect our numerical results for $\epsilon$
+because looking at \eqref{FiniteBoxSchrodinger} shows that the normalization
+constants cancel. 
 
-\begin{sageblock}
-plot_data(shooting_solver_finite_well(1, 0, 1.5, .01, 0.0001), \
-          n=1, title="Ground Energy Eigenfunction")
-\end{sageblock}
+In order to plot our solutions, our simulation will only find eigenfunctions which are
+real functions. This is not a problem because we have the ability to choose the phase of 
+solutions to the TISE \eqref{FiniteBoxSchrodinger} to make $\psi(u) \in \mathbb{R}$ (see P24 - Computation Project Handout).
+
+Using these initial conditions, the "shooting" method to determine $\epsilon$ yields:
+
 \begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(1, 0, 1.5, .01, 0.0001), n=1, title="Ground Energy Eigenfunction")}
+\begin{sageblock}
+plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .01, 0.0001), \
+                      n=1, title="Guess $\epsilon=0.01$")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px, ]{plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .01, 0.0001), n=1, title="Guess $\epsilon=0.01$")}
+\end{figure}
+\vspace{-.2in}
+\begin{figure}[H]
+\begin{sageblock}
+plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .09, 0.0001), \
+                      n=1, title="Guess $\epsilon=0.09$")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .09, 0.0001), n=1, title="Guess $\epsilon=0.09$")}
+\end{figure}
+\vspace{-.2in}
+\begin{figure}[H]
+\begin{sageblock}
+plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .095, 0.0001), \
+                      n=1, title="Guess $\epsilon=0.095$")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .095, 0.0001), n=1, title="Guess $\epsilon=0.095$")}
+\end{figure}
+\vspace{-.2in}
+\begin{figure}[H]
+\begin{sageblock}
+plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .0975, 0.0001), \
+                      n=1, title="Guess $\epsilon=0.0975$")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .0975, 0.0001), n=1, title="Guess $\epsilon=0.0975$")}
+\end{figure}
+\vspace{-.2in}
+\begin{figure}[H]
+\begin{sageblock}
+plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .098, 0.0001), \
+                      n=1, title="Guess $\epsilon=0.098$")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .098, 0.0001), n=1, title="Guess $\epsilon=0.098$")}
+\end{figure}
+\vspace{-.2in}
+\begin{figure}[H]
+\begin{sageblock}
+plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .097993, 0.0001), \
+                      n=1, title="Ground Energy Eigenfunction")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .097993, 0.0001), n=1, title="Ground Energy Eigenfunction")}
 \end{figure}
 
-\begin{sageblock}
-plot_data(shooting_solver_finite_well(1, 0, 1.5, .09, 0.0001), \
-          n=1, title="Ground Energy Eigenfunction")
-\end{sageblock}
-\begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(1, 0, 1.5, .09, 0.0001), n=1, title="Ground Energy Eigenfunction")}
-\end{figure}
+This shows that a valid solution is found at $\epsilon = 0.097993$, implying
+that an energy eigenstate exists with eigenvalue $0.097993V_0$, where $V_0$ is
+the height of the finite well potential. We see that there is a single node in
+this wavefunction, indicating that this eigenstate is the ground state.
 
-\begin{sageblock}
-plot_data(shooting_solver_finite_well(1, 0, 1.5, .095, 0.0001), \
-          n=1, title="Ground Energy Eigenfunction")
-\end{sageblock}
-\begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(1, 0, 1.5, .095, 0.0001), n=1, title="Ground Energy Eigenfunction")}
-\end{figure}
+This solution agrees quite well with the analytic solution $\epsilon = 0.0980$
+(ER Appendix H).
 
-\begin{sageblock}
-plot_data(shooting_solver_finite_well(1, 0, 1.5, .0975, 0.0001), \
-          n=1, title="Ground Energy Eigenfunction")
-\end{sageblock}
-\begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(1, 0, 1.5, .0975, 0.0001), n=1, title="Ground Energy Eigenfunction")}
-\end{figure}
+\subsection{Excited States of Finite Quantum Well}
 
-\begin{sageblock}
-plot_data(shooting_solver_finite_well(1, 0, 1.5, .098, 0.0001), \
-          n=1, title="Ground Energy Eigenfunction")
-\end{sageblock}
-\begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(1, 0, 1.5, .098, 0.0001), n=1, title="Ground Energy Eigenfunction")}
-\end{figure}
+Bound states will exist so long as $E < V_0 \equiv \epsilon < 1$ so we can
+search for additional energy eigenstates by guessing larger $\epsilon$. The
+first excited state will have a node at the origin ($\psi(0) = 0$). The
+linearity property of the Schrodinger equation \eqref{FiniteBoxSchrodinger} as
+well as our focus on the unnormalized eigenfunction allows us to choose any
+arbitrary value for $\frac{d\psi}{du}$ (we will use $\frac{d\psi}{du}=1$).
 
-\begin{sageblock}
-plot_data(shooting_solver_finite_well(1, 0, 1.5, .097993, 0.0001), \
-          n=1, title="Ground Energy Eigenfunction")
-\end{sageblock}
-\begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(1, 0, 1.5, .097993, 0.0001), n=1, title="Ground Energy Eigenfunction")}
-\end{figure}
-
-This shows that a valid solution is found at $\epsilon = 0.097993$, implying that an energy eigenvalue exists 
-at $0.097993V_0$. We see that there is a single node in this wavefunction, indicating that this solution is the groud state.
-
-\subsection{Excited states of finite quantum well}
-Bound states will exist as long as $\epsilon < 1$ so we can continue increasing
-$\epsilon$ to look for additional bound states. The first excited state will
-have a node at the origin ($\psi(0) = 0$). Due to the linearity of eigenfunctions, $\frac{d\psi}{du}$ can take on any value (we assume $\frac{d\psi}{du} = 1$. Running the simulation using these initial conditions, the shooting method yields an energy eigenvalue of $\epsilon = 0.382605$
+Running the simulation using these initial conditions (multiple trials omitted)
+an energy eigenvalue to $V_0$ proportionality constant of $\epsilon = 0.382605$
 for $\psi_2$:
 
-\begin{sageblock}
-    plot_data(shooting_solver_finite_well(0, 1, 2, .382605, 0.0001), \
-              n=2, title="1st Excited Energy Eigenfunction")
-\end{sageblock}
 \begin{figure}[H]
-    \sageplot[width=300px]{plot_data(shooting_solver_finite_well(0, 1, 2, .382605, 0.0001), n=2, title="1st Excited Energy Eigenfunction")}
+\begin{sageblock}
+plot_finite_well(shooting_solver_1d_finite(0, 1, 2, .382605, 0.0001), \
+                      n=2, title="1st Excited Energy Eigenfunction")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_finite_well(shooting_solver_1d_finite(0, 1, 2, .382605, 0.0001), n=2, title="1st Excited Energy Eigenfunction")}
 \end{figure}
 
 For $\psi_3$, $\epsilon = 0.80767$:
 
-\begin{sageblock}
-    plot_data(shooting_solver_finite_well(-1, 0, 2, .80767, 0.0001), \
-              n=3, title="2nd Excited Energy Eigenfunction")
-\end{sageblock}
 \begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(1, 0, 2, .80767, 0.0001), n=3, title="2nd Excited Energy Eigenfunction")}
+\begin{sageblock}
+plot_finite_well(shooting_solver_1d_finite(-1, 0, 2, .80767, 0.0001), \
+                      n=3, title="2nd Excited Energy Eigenfunction")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_finite_well(shooting_solver_1d_finite(1, 0, 2, .80767, 0.0001), n=3, title="2nd Excited Energy Eigenfunction")}
 \end{figure}
 
+\subsubsection{Other Numerical Methods} 
 The shooting method provides a convenient way to numerically solve the
-finite-well problem by converting a boundary condition problem to an initial value problem.
-% Can you imagine another numerical solution without shooting method
+finite-well problem by converting the boundary value problem to an initial
+value problem. However, this is not a traditional boundary value problem.
+Rather than solving for the values of $\psi(u)$ given the boundary constraints,
+we are solving for the $\epsilon$ value in the differential equation which give
+rise to solutions satisfying the boundary conditions. Additionally, we are dealing
+with asymptotic boundary conditions.
 
-\subsection{Unbound states}
-Examining solutions which are not bound ($E > V_0 \rightarrow \epsilon > 1$), we find:
+Nonetheless, we can reformulate techniques such as finite difference methods to
+accompany the additional variable $\epsilon$. The asymptotic boundary condition
+can be mitigated by choosing the boundary to be at a large value of $u$. By
+treating $\epsilon$ as an unknown, the multiplication of $\epsilon$ with
+$\psi(u)$ in equation \eqref{FiniteBoxSchrodinger} will result in a system of
+non-linear equations.  This system of non-linear equations can then be solved
+using Newton's method, yielding both the eigenfunction $\psi(u)$ as well as
+$\epsilon$. 
 
-\begin{sageblock}
-    plot_data(shooting_solver_finite_well(-1, 0, 5, 3, 0.0001), \
-              n=3, title="Unbound Energy")
-\end{sageblock}
+\subsection{"Scattering" States of Finite Quantum Well} 
+
+States where ($E > V_0 \rightarrow \epsilon > 1$) are where the quantum well is
+no longer able to bind the particle. For these unbound energy states, the
+allowable energy levels are no longer discrete. One example of an acceptable
+unbound solution to equation \eqref{FiniteBoxSchrodinger} is:
+
 \begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(-1, 0, 5, 3, 0.0001), n="unbound", title="Unbound Energy Eigenfunction")}
+\begin{sageblock}
+plot_finite_well(shooting_solver_1d_finite(-1, 0, 5, 3, 0.0001), \
+                      n="unbound", title="Unbound Energy State")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_finite_well(shooting_solver_1d_finite(-1, 0, 5, 3, 0.0001), n="unbound", title="Unbound Energy State")}
 \end{figure}
 
-In actuality, any value for $\epsilon > 1$ is a valid solution which results in
-a sinusoidal steady state in the limit $u \rightarrow \infty$. As energy is
-increased, so does the frequency of $\psi$. In the limit $E \rightarrow \infty$, 
-the probability density approaches the clasically expected uniform probability density. 
+Any $\epsilon > 1$ is a valid energy which will tend towards a sinusoidal steady
+state in the limit $u \rightarrow \infty$. As energy is increased, so does the
+frequency of $\psi$. In the limit $E \rightarrow \infty$, the probability
+density approaches the clasically expected uniform probability density. 
 
 \subsubsection{Step size error}
-This result, however, is quite sensitive to the step size used during 
-numerical integration. Forward Euler is a first order solver which 
-violates the conservation of energy by introducing additional energy. As a consequence,
-the result seen above no longer results in a sinusoidal steady state when
-$\delta U$ is changed from $0.0001$ to $0.01$. Rather, the Forward Euler
-approximation adds enough energy to result in infinite blowup:
+This result, however, is quite sensitive to the step size used for numerical
+integration. Forward Euler is a first order solver which can be numerically
+unstable and introducing additional energy. For example, the result no longer
+results in sinusoidal limit behavior when $\Delta U$ is changed from $0.0001$
+to $0.01$.  Rather, the Forward Euler approximation adds enough energy to
+result in infinite blowup:
 
-\begin{sageblock}
-    plot_data(shooting_solver_finite_well(-1, 0, 5, 3, 0.01), \
-              n=3, title="Unbound Energy")
-\end{sageblock}
 \begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(-1, 0, 5, 3, 0.01), n="unbound", title="Energy gain due to low step size")}
+\begin{sageblock}
+plot_finite_well(shooting_solver_1d_finite(-1, 0, 5, 3, 0.01), \
+                      n="unbound", title="Energy gain due to low step size")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_finite_well(shooting_solver_1d_finite(-1, 0, 5, 3, 0.01), n="unbound", title="Energy gain due to low step size")}
 \end{figure}
 
+To address the numerical stability issues of Forward-Euler as well as increase
+rate of convergance of error to $0$ as $\Delta U \rightarrow \infty$, implicit
+and symplectic solvers of higher order can be used to carry out numerical
+integration.
+
 \section{Infinite Quantum Well}
-The modularity of the code allows for easy re-use. One can simulate the
-infinite quantum well by simply modifying the definition of the potential:
+
+The simulation code can be easily adjusted for different potentials. For
+example, the infinite quantum well can be simulated by modifying the definition
+of the potential:
 
 \begin{sageblock}
 # 999 to approximate infinite potential
-V_potential = lambda u: 999 * int(abs(u) > 1/2)
+V_potential = lambda u: 999 if (abs(u) > 1/2) else 0
 \end{sageblock}
 
-Next, by interpreting $V_0 = 1$ eV and aiming the shooting method to satisfy
-$\psi(x = a/2) = 0$, the energy eigenstates can be found. This results in:
+Next, by interpreting $V_0 = 1$ eV and using the boundary condition
+$\psi(\text{\(\lvert u\rvert\)}=\frac{1}{2}) = 0$, the energy eigenstates can be found.
+
+Since we have an analytical solution for an infinite square well (ER Eq. 6-79,
+Eq. 6-80):
+
+\begin{equation}
+    \psi_n(x) = 
+    \begin{cases}
+        B_n \cos k_n x &\text{where } k_n = \frac{n\pi}{a} n = 1,3,5,\ldots\\
+        A_n \sin k_n x &\text{where } k_n = \frac{n\pi}{a} n = 2,4,6,\ldots\\
+    \end{cases}
+\end{equation}
+
+We can visualize how well our simulation approximates analytical results by modifying our
+plotting function to also plot the analytical eigenstate. We set the constant factors $A_n$
+to 1 maintain consistency with our initial condition $\psi(0) = 1$.
 
 \begin{sageblock}
-    plot_data(shooting_solver_finite_well(1, 0, 0.5, .1542, 0.0001), \
-              n=1, title="Ground Energy Eigenfunction, \
-              $\infty$-quantum well")
+from numpy import arange
+def plot_inf_sq_eigenstate(n, uf, data, title, chained=False):
+    if not chained: plt.clf()
+    u = arange(-float(uf),float(uf),2*float(uf)/100)
+    if n % 2 != 0: # 
+        psi = [cos(i * pi) for i in u]
+    else:
+        psi = [cos(i * pi) for i in u]
+    plt.plot(u, psi, label="Analytical Solution", marker='+', linestyle='None')
+    plt.save = plt.savefig
+    return plot_finite_well(data, n, title, True)
 \end{sageblock}
-\begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(1, 0, 0.5, .1542, 0.0001), n=1, title="Ground Energy Eigenfunction, $\infty$-quantum well")}
-\end{figure}
 
+This results in (multiple trials omitted):
+
+\begin{figure}[H]
 \begin{sageblock}
-    plot_data(shooting_solver_finite_well(0, 1, 0.5, 0.6179, 0.0001), \
-              n=2, title="First Exctited Energy Eigenfunction, \
-              $\infty$-quantum well")
+plot_inf_sq_eigenstate(1, 0.5, shooting_solver_1d_finite(1, 0, 0.5, .1542, 0.0001), \
+                       title="Ground Energy Eigenfunction, $\infty$-quantum well")
 \end{sageblock}
-\begin{figure}[H]
-\sageplot[width=300px]{plot_data(shooting_solver_finite_well(0, 1, 0.5, 0.6179, 0.0001), n=2, title="First Excited Energy Eigenfunction, $\infty$-quantum well")}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_inf_sq_eigenstate(1, 0.5, shooting_solver_1d_finite(1, 0, 0.5, .1542, 0.0001), title="Ground Energy Eigenfunction, $\infty$-quantum well")}
 \end{figure}
 
-These results imply that the particle in the $\infty$-quantum well has energy eigenvalues of 0.1542eV and 0.6179 eV.
+\begin{figure}[H]
+\begin{sageblock}
+plot_inf_sq_eigenstate(2, 0.5, shooting_solver_1d_finite(0, 1, 0.5, 0.6179, 0.0001), \
+                       title="First Exctited Energy Eigenfunction, $\infty$-quantum well")
+\end{sageblock}
+\vspace{-.1in}
+\centering
+\sageplot[width=300px]{plot_inf_sq_eigenstate(2, 0.5, shooting_solver_1d_finite(0, 1, 0.5, 0.6179, 0.0001), title="First Exctited Energy Eigenfunction, $\infty$-quantum well")
+}
+\end{figure}
 
-% COMPARE THESE TO Analytical Eigenvalues
-% Plot analytica eigenfunctions on same plot
+We see that our approximations of the eigenfunction follows analytical results
+very closely and the energy eigenstates for the $\infty$-quantum well has energy
+eigenvalues of 0.1542eV and 0.6179 eV. When compared to the analytical solutions:
+
+\begin{align}
+    m &= \frac{\beta\hbar^2}{2a^2V_0} \:(\text{From } \eqref{DimensionlessSubstitutions})\nonumber \\
+    E_n &= \frac{\pi^2 \hbar^2 n^2}{2ma^2} = \frac{\pi^2n^2V_0}{\beta} \nonumber \\
+    E_1 &= \frac{\pi^2}{64} \approx 0.1542 \\
+    E_2 &= \frac{4\pi^2}{64} \approx 0.6168 
+\end{align}
+
+we see that our simulation yields an answer accurate to the hundredth of an eV.
 
 \section{Quantum Harmonic Oscillator}
 The numerical methods developed so far can be extended to other non-trivial potentials.
@@ -299,7 +419,6 @@ omega = sqrt(C / m)
 x0 = sqrt(hbar / (m * omega))
 
 V_potential = lambda u: C * (u * x0)**2 / 2
-
 
 def shooting_solver_qho(psi0, dpsi0, uf, epsilon, delta_u):
     num_steps = (uf - 0) / delta_u
