@@ -1,0 +1,466 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2013.1.14)  19 JAN 2013 13:13
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**writeup.tex
+(./writeup.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/generic/sagetex/sagetex.sty
+Package: sagetex 2012/01/16 v2.3.3-69dcb0eb93de embedding Sage into LaTeX docum
+ents
+
+(/usr/share/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks14
+\verbatim@line=\toks15
+\verbatim@in@stream=\read1
+)
+(/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz) (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+\FV@CodeLineNo=\count87
+\FV@InFile=\read2
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count88
+\FV@StepNumber=\count89
+\FV@OutFile=\write3
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count90
+\lst@gtempboxa=\box27
+\lst@token=\toks17
+\lst@length=\count91
+\lst@currlwidth=\dimen103
+\lst@column=\count92
+\lst@pos=\count93
+\lst@lostspace=\dimen104
+\lst@width=\dimen105
+\lst@newlines=\count94
+\lst@lineno=\count95
+\lst@maxwidth=\dimen106
+
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count96
+\lst@skipnumbers=\count97
+\lst@framebox=\box28
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count98
+))
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
+)
+(/usr/share/texmf-dist/tex/latex/makecmds/makecmds.sty
+Package: makecmds 2009/09/03 v1.0a extra command making commands
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\c@ST@inline=\count99
+\c@ST@plot=\count100
+\c@ST@cmdline=\count101
+\sagetexindent=\skip43
+ (./writeup.sagetex.sout)
+\sagecommandlineskip=\skip44
+) (/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count102
+\float@exts=\toks18
+\float@box=\box29
+\@float@everytoks=\toks19
+\@floatcapt=\box30
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks20
+\ex@=\dimen109
+))
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen110
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count103
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count104
+\leftroot@=\count105
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count106
+\DOTSCASE@=\count107
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box31
+\strutbox@=\box32
+\big@size=\dimen111
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count108
+\c@MaxMatrixCols=\count109
+\dotsspace@=\muskip10
+\c@parentequation=\count110
+\dspbrk@lvl=\count111
+\tag@help=\toks21
+\row@=\count112
+\column@=\count113
+\maxfields@=\count114
+\andhelp@=\toks22
+\eqnshift@=\dimen112
+\alignsep@=\dimen113
+\tagshift@=\dimen114
+\tagwidth@=\dimen115
+\totwidth@=\dimen116
+\lineht@=\dimen117
+\@envbody=\toks23
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count115
+\Gm@cntv=\count116
+\c@Gm@tempcnt=\count117
+\Gm@bindingoffset=\dimen118
+\Gm@wd@mp=\dimen119
+\Gm@odd@mp=\dimen120
+\Gm@even@mp=\dimen121
+\Gm@layoutwidth=\dimen122
+\Gm@layoutheight=\dimen123
+\Gm@layouthoffset=\dimen124
+\Gm@layoutvoffset=\dimen125
+\Gm@dimlist=\toks25
+) (./writeup.aux)
+\openout1 = `writeup.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+\c@lstlisting=\count118
+
+(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count119
+\scratchdimen=\dimen126
+\scratchbox=\box33
+\nofMPsegments=\count120
+\nofMParguments=\count121
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen127
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
+\everyMPtoPDFconversion=\toks27
+) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\ST@sf=\write4
+\openout4 = `writeup.sagetex.sage'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+<sage-plots-for-writeup.tex/plot-0.pdf, id=21, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-0.pdf Graphic file (type pdf)
+
+<use sage-plots-for-writeup.tex/plot-0.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-0.pdf used on input li
+ne 149.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+
+<sage-plots-for-writeup.tex/plot-1.pdf, id=22, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-1.pdf Graphic file (type pdf)
+
+<use sage-plots-for-writeup.tex/plot-1.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-1.pdf used on input li
+ne 157.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+
+<sage-plots-for-writeup.tex/plot-2.pdf, id=23, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-2.pdf Graphic file (type pdf)
+
+<use sage-plots-for-writeup.tex/plot-2.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-2.pdf used on input li
+ne 165.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+ [3 <./sage-plots-for-writeup.tex/plot-0.pdf> <./sage-plots-for-writeup.tex/plo
+t-1.pdf>]
+<sage-plots-for-writeup.tex/plot-3.pdf, id=113, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-3.pdf Graphic file (type pdf)
+
+<use sage-plots-for-writeup.tex/plot-3.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-3.pdf used on input li
+ne 173.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+
+<sage-plots-for-writeup.tex/plot-4.pdf, id=114, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-4.pdf Graphic file (type pdf)
+
+<use sage-plots-for-writeup.tex/plot-4.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-4.pdf used on input li
+ne 181.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+ [4 <./sage-plots-for-writeup.tex/plot-2.pdf> <./sage-plots-for-writeup.tex/plo
+t-3.pdf>]
+<sage-plots-for-writeup.tex/plot-5.pdf, id=199, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-5.pdf Graphic file (type pdf)
+
+<use sage-plots-for-writeup.tex/plot-5.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-5.pdf used on input li
+ne 189.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+ [5 <./sage-plots-for-writeup.tex/plot-4.pdf> <./sage-plots-for-writeup.tex/plo
+t-5.pdf>]
+<sage-plots-for-writeup.tex/plot-6.pdf, id=287, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-6.pdf Graphic file (type pdf)
+
+<use sage-plots-for-writeup.tex/plot-6.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-6.pdf used on input li
+ne 206.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+
+<sage-plots-for-writeup.tex/plot-7.pdf, id=288, 578.16pt x 433.62pt>
+File: sage-plots-for-writeup.tex/plot-7.pdf Graphic file (type pdf)
+
+<use sage-plots-for-writeup.tex/plot-7.pdf>
+Package pdftex.def Info: sage-plots-for-writeup.tex/plot-7.pdf used on input li
+ne 216.
+(pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
+ [6 <./sage-plots-for-writeup.tex/plot-6.pdf> <./sage-plots-for-writeup.tex/plo
+t-7.pdf>]
+
+Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-8.pdf on
+ page 7 does not exist. Plot command is on input line 231.
+
+
+Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-9.pdf on
+ page 7 does not exist. Plot command is on input line 252.
+
+
+Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-10.pdf o
+n page 7 does not exist. Plot command is on input line 273.
+
+
+Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-11.pdf o
+n page 7 does not exist. Plot command is on input line 282.
+
+[7] [8]
+
+Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-12.pdf o
+n page 9 does not exist. Plot command is on input line 350.
+
+
+Package sagetex Warning: Graphics file sage-plots-for-writeup.tex/plot-13.pdf o
+n page 9 does not exist. Plot command is on input line 361.
+
+*********************************************************************
+
+Package sagetex Warning: there were undefined Sage formulas and/or plots.
+Run Sage on writeup.sagetex.sage, and then run LaTeX on writeup.tex again.
+
+*********************************************************************
+[9] (./writeup.aux) ) 
+Here is how much of TeX's memory you used:
+ 4444 strings out of 493488
+ 62958 string characters out of 3146892
+ 141163 words of memory out of 3000000
+ 7671 multiletter control sequences out of 15000+200000
+ 10232 words of font info for 38 fonts, out of 3000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 38i,12n,34p,300b,273s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
+10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on writeup.pdf (9 pages, 261192 bytes).
+PDF statistics:
+ 426 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+
