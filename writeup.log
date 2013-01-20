@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2013.1.14)  19 JAN 2013 18:47
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Arch Linux) (format=pdflatex 2013.1.14)  19 JAN 2013 21:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -384,7 +384,7 @@ Package pdftex.def Info: sage-plots-for-writeup.tex/plot-2.pdf used on input li
 ne 192.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
  [3 <./sage-plots-for-writeup.tex/plot-0.pdf>] <sage-plots-for-writeup.tex/plot
--3.pdf, id=65, 578.16pt x 433.62pt>
+-3.pdf, id=77, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-3.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-3.pdf>
@@ -392,7 +392,7 @@ Package pdftex.def Info: sage-plots-for-writeup.tex/plot-3.pdf used on input li
 ne 202.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
 
-<sage-plots-for-writeup.tex/plot-4.pdf, id=66, 578.16pt x 433.62pt>
+<sage-plots-for-writeup.tex/plot-4.pdf, id=78, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-4.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-4.pdf>
@@ -401,7 +401,7 @@ ne 212.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
  [4 <./sage-plots-for-writeup.tex/plot-1.pdf> <./sage-plots-for-writeup.tex/plo
 t-2.pdf>]
-<sage-plots-for-writeup.tex/plot-5.pdf, id=145, 578.16pt x 433.62pt>
+<sage-plots-for-writeup.tex/plot-5.pdf, id=181, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-5.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-5.pdf>
@@ -410,7 +410,7 @@ ne 222.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
  [5 <./sage-plots-for-writeup.tex/plot-3.pdf> <./sage-plots-for-writeup.tex/plo
 t-4.pdf>]
-<sage-plots-for-writeup.tex/plot-6.pdf, id=225, 578.16pt x 433.62pt>
+<sage-plots-for-writeup.tex/plot-6.pdf, id=285, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-6.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-6.pdf>
@@ -418,7 +418,12 @@ Package pdftex.def Info: sage-plots-for-writeup.tex/plot-6.pdf used on input li
 ne 253.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
  [6 <./sage-plots-for-writeup.tex/plot-5.pdf>]
-<sage-plots-for-writeup.tex/plot-7.pdf, id=271, 578.16pt x 433.62pt>
+Overfull \hbox (13.76866pt too wide) in paragraph at lines 261--261
+[]                       \OT1/cmtt/m/n/10 n=3, title="2nd Excited Energy Eigenf
+unction, $\epsilon=0.80767$")[] 
+ []
+
+<sage-plots-for-writeup.tex/plot-7.pdf, id=345, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-7.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-7.pdf>
@@ -427,94 +432,97 @@ ne 265.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
  [7 <./sage-plots-for-writeup.tex/plot-6.pdf> <./sage-plots-for-writeup.tex/plo
 t-7.pdf>]
-<sage-plots-for-writeup.tex/plot-8.pdf, id=358, 578.16pt x 433.62pt>
+<sage-plots-for-writeup.tex/plot-8.pdf, id=459, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-8.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-8.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-8.pdf used on input li
-ne 300.
+ne 304.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
 
-<sage-plots-for-writeup.tex/plot-9.pdf, id=359, 578.16pt x 433.62pt>
+<sage-plots-for-writeup.tex/plot-9.pdf, id=460, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-9.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-9.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-9.pdf used on input li
-ne 323.
+ne 328.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
- [8 <./sage-plots-for-writeup.tex/plot-8.pdf>]
-<sage-plots-for-writeup.tex/plot-10.pdf, id=407, 578.16pt x 433.62pt>
+ [8 <./sage-plots-for-writeup.tex/plot-8.pdf>] [9 <./sage-plots-for-writeup.tex
+/plot-9.pdf>]
+Overfull \hbox (45.26839pt too wide) in paragraph at lines 390--390
+[]     \OT1/cmtt/m/n/10 plt.plot(u, psi, label="Analytical Solution", marker='+
+', linestyle='None', color='Green')[] 
+ []
+
+
+Overfull \hbox (34.76848pt too wide) in paragraph at lines 400--400
+[]               \OT1/cmtt/m/n/10 title="Ground Energy Eigenfunction, $\infty$-
+quantum well, $\epsilon=0.1542$")[] 
+ []
+
+<sage-plots-for-writeup.tex/plot-10.pdf, id=575, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-10.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-10.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-10.pdf used on input l
-ine 383.
+ine 404.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
- [9 <./sage-plots-for-writeup.tex/plot-9.pdf>]
-Overfull \hbox (3.26875pt too wide) in paragraph at lines 388--388
-[] \OT1/cmtt/m/n/10 plot_inf_sq_eigenstate(2, 0.5, shooting_solver_1d_finite(0,
- 1, 0.5, 0.6179, 0.0001), \ 
- []
 
-
-Overfull \hbox (24.26857pt too wide) in paragraph at lines 389--389
-[]                        \OT1/cmtt/m/n/10 title="First Exctited Energy Eigenfu
-nction, $\infty$-quantum well")[] 
- []
-
-<sage-plots-for-writeup.tex/plot-11.pdf, id=457, 578.16pt x 433.62pt>
+<sage-plots-for-writeup.tex/plot-11.pdf, id=576, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-11.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-11.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-11.pdf used on input l
-ine 394.
+ine 416.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
- [10 <./sage-plots-for-writeup.tex/plot-10.pdf> <./sage-plots-for-writeup.tex/p
-lot-11.pdf>] [11]
-<sage-plots-for-writeup.tex/plot-12.pdf, id=578, 578.16pt x 433.62pt>
+ [10 <./sage-plots-for-writeup.tex/plot-10.pdf>] [11 <./sage-plots-for-writeup.
+tex/plot-11.pdf>]
+<sage-plots-for-writeup.tex/plot-12.pdf, id=712, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-12.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-12.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-12.pdf used on input l
-ine 469.
+ine 519.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
-
-<sage-plots-for-writeup.tex/plot-13.pdf, id=579, 578.16pt x 433.62pt>
+ [12]
+<sage-plots-for-writeup.tex/plot-13.pdf, id=716, 578.16pt x 433.62pt>
 File: sage-plots-for-writeup.tex/plot-13.pdf Graphic file (type pdf)
 
 <use sage-plots-for-writeup.tex/plot-13.pdf>
 Package pdftex.def Info: sage-plots-for-writeup.tex/plot-13.pdf used on input l
-ine 480.
+ine 534.
 (pdftex.def)             Requested size: 301.1261pt x 225.84099pt.
- [12 <./sage-plots-for-writeup.tex/plot-12.pdf>]
+ [13 <./sage-plots-for-writeup.tex/plot-12.pdf> <./sage-plots-for-writeup.tex/p
+lot-13.pdf>]
 *********************************************************************
-[13 <./sage-plots-for-writeup.tex/plot-13.pdf>] (./writeup.aux) ) 
+[14] (./writeup.aux) ) 
 Here is how much of TeX's memory you used:
- 4548 strings out of 493488
- 65112 string characters out of 3146892
- 142586 words of memory out of 3000000
- 7760 multiletter control sequences out of 15000+200000
+ 4552 strings out of 493488
+ 65167 string characters out of 3146892
+ 141611 words of memory out of 3000000
+ 7764 multiletter control sequences out of 15000+200000
  12712 words of font info for 50 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,12n,34p,251b,269s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb>
-Output written on writeup.pdf (13 pages, 375045 bytes).
+ 38i,12n,34p,251b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.p
+fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msbm7.pfb>
+Output written on writeup.pdf (14 pages, 442525 bytes).
 PDF statistics:
- 718 PDF objects out of 1000 (max. 8388607)
- 266 compressed objects within 3 object streams
+ 889 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

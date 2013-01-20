@@ -41,7 +41,7 @@ try:
          data = map(lambda x: (-x[0], x[1]), data)[::-1] + data
  
      u, psi = [[x[i] for x in data] for i in (0,1)]
-     plt.plot(u, psi)
+     plt.plot(u, psi, label="Euler Approximation")
      plt.title(title)
      plt.xlabel('$u$')
      plt.ylabel("$\\psi_{%s}(u)$" % n)
@@ -58,7 +58,7 @@ _st_.blockend()
 _st_.blockbegin()
 try:
  plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .01, 0.0001), \
-                       n=1, title="Guess $\epsilon=0.01$")
+                  n=1, title="Guess $\epsilon=0.01$")
 except:
  _st_.goboom(169)
 _st_.blockend()
@@ -69,7 +69,7 @@ except:
 _st_.blockbegin()
 try:
  plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .09, 0.0001), \
-                       n=1, title="Guess $\epsilon=0.09$")
+                  n=1, title="Guess $\epsilon=0.09$")
 except:
  _st_.goboom(179)
 _st_.blockend()
@@ -80,7 +80,7 @@ except:
 _st_.blockbegin()
 try:
  plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .095, 0.0001), \
-                       n=1, title="Guess $\epsilon=0.095$")
+                  n=1, title="Guess $\epsilon=0.095$")
 except:
  _st_.goboom(189)
 _st_.blockend()
@@ -91,7 +91,7 @@ except:
 _st_.blockbegin()
 try:
  plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .0975, 0.0001), \
-                       n=1, title="Guess $\epsilon=0.0975$")
+                  n=1, title="Guess $\epsilon=0.0975$")
 except:
  _st_.goboom(199)
 _st_.blockend()
@@ -102,7 +102,7 @@ except:
 _st_.blockbegin()
 try:
  plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .098, 0.0001), \
-                       n=1, title="Guess $\epsilon=0.098$")
+                  n=1, title="Guess $\epsilon=0.098$")
 except:
  _st_.goboom(209)
 _st_.blockend()
@@ -113,130 +113,131 @@ except:
 _st_.blockbegin()
 try:
  plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .097993, 0.0001), \
-                       n=1, title="Ground Energy Eigenfunction")
+                  n=1, title="Ground Energy Eigenfunction, $\epsilon=0.097993$")
 except:
  _st_.goboom(219)
 _st_.blockend()
 try:
- _st_.plot(5, format='notprovided', _p_=plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .097993, 0.0001), n=1, title="Ground Energy Eigenfunction"))
+ _st_.plot(5, format='notprovided', _p_=plot_finite_well(shooting_solver_1d_finite(1, 0, 1.5, .097993, 0.0001), n=1, title="Ground Energy Eigenfunction, $\epsilon =0.097993$"))
 except:
  _st_.goboom(222)
 _st_.blockbegin()
 try:
  plot_finite_well(shooting_solver_1d_finite(0, 1, 2, .382605, 0.0001), \
-                       n=2, title="1st Excited Energy Eigenfunction")
+                  n=2, title="1st Excited Energy Eigenfunction, $\epsilon=0.382605$")
 except:
  _st_.goboom(250)
 _st_.blockend()
 try:
- _st_.plot(6, format='notprovided', _p_=plot_finite_well(shooting_solver_1d_finite(0, 1, 2, .382605, 0.0001), n=2, title="1st Excited Energy Eigenfunction"))
+ _st_.plot(6, format='notprovided', _p_=plot_finite_well(shooting_solver_1d_finite(0, 1, 2, .382605, 0.0001), n=2, title="1st Excited Energy Eigenfunction, $\epsilon =0.382605$"))
 except:
  _st_.goboom(253)
 _st_.blockbegin()
 try:
  plot_finite_well(shooting_solver_1d_finite(-1, 0, 2, .80767, 0.0001), \
-                       n=3, title="2nd Excited Energy Eigenfunction")
+                       n=3, title="2nd Excited Energy Eigenfunction, $\epsilon=0.80767$")
 except:
  _st_.goboom(262)
 _st_.blockend()
 try:
- _st_.plot(7, format='notprovided', _p_=plot_finite_well(shooting_solver_1d_finite(1, 0, 2, .80767, 0.0001), n=3, title="2nd Excited Energy Eigenfunction"))
+ _st_.plot(7, format='notprovided', _p_=plot_finite_well(shooting_solver_1d_finite(1, 0, 2, .80767, 0.0001), n=3, title="2nd Excited Energy Eigenfunction, $\epsilon =0.80767$"))
 except:
  _st_.goboom(265)
 _st_.blockbegin()
 try:
  plot_finite_well(shooting_solver_1d_finite(-1, 0, 5, 3, 0.0001), \
-                       n="unbound", title="Unbound Energy State")
+                  n="unbound", title="Unbound Energy State, \epsilon=3")
 except:
- _st_.goboom(297)
+ _st_.goboom(301)
 _st_.blockend()
 try:
- _st_.plot(8, format='notprovided', _p_=plot_finite_well(shooting_solver_1d_finite(-1, 0, 5, 3, 0.0001), n="unbound", title="Unbound Energy State"))
+ _st_.plot(8, format='notprovided', _p_=plot_finite_well(shooting_solver_1d_finite(-1, 0, 5, 3, 0.0001), n="unbound", title="Unbound Energy State, \epsilon =3"))
 except:
- _st_.goboom(300)
+ _st_.goboom(304)
 _st_.blockbegin()
 try:
  plot_finite_well(shooting_solver_1d_finite(-1, 0, 5, 3, 0.01), \
-                       n="unbound", title="Energy gain due to low step size")
+                       n="unbound", title="Energy gain due to low step size, \
+                                           $\epsilon=3$")
 except:
- _st_.goboom(320)
+ _st_.goboom(325)
 _st_.blockend()
 try:
- _st_.plot(9, format='notprovided', _p_=plot_finite_well(shooting_solver_1d_finite(-1, 0, 5, 3, 0.01), n="unbound", title="Energy gain due to low step size"))
+ _st_.plot(9, format='notprovided', _p_=plot_finite_well(shooting_solver_1d_finite(-1, 0, 5, 3, 0.01), n="unbound", title="Energy gain due to low step size, $\epsilon =3$"))
 except:
- _st_.goboom(323)
+ _st_.goboom(328)
 _st_.blockbegin()
 try:
  # 999 to approximate infinite potential
  V_potential = lambda u: 999 if (abs(u) > 1/2) else 0
 except:
- _st_.goboom(340)
+ _st_.goboom(345)
 _st_.blockend()
 _st_.blockbegin()
 try:
  from numpy import arange
- def plot_inf_sq_eigenstate(n, uf, data, title, chained=False):
-     if not chained: plt.clf()
+ def plot_inf_well(n, uf, data, title):
+     plt.clf()
      u = arange(-float(uf),float(uf),2*float(uf)/100)
      if n % 2 != 0: #
-         psi = [cos(i * pi) for i in u]
+         psi = [1 * cos(n*i*pi) for i in u]
      else:
-         psi = [cos(i * pi) for i in u]
-     plt.plot(u, psi, label="Analytical Solution", marker='+', linestyle='None')
+         psi = [(1 / (n * pi)) * sin(n*i*pi) for i in u]
+     plt.plot(u, psi, label="Analytical Solution", marker='+', linestyle='None', color='Green')
      plt.save = plt.savefig
-     return plot_finite_well(data, n, title, True)
+     return plot_finite_well(data, n, title, chained=True)
 except:
- _st_.goboom(372)
+ _st_.goboom(393)
 _st_.blockend()
 _st_.blockbegin()
 try:
- plot_inf_sq_eigenstate(1, 0.5, shooting_solver_1d_finite(1, 0, 0.5, .1542, 0.0001), \
-                        title="Ground Energy Eigenfunction, $\infty$-quantum well")
+ plot_inf_well(1, 0.5, shooting_solver_1d_finite(1, 0, 0.5, .1542, 0.0001), \
+               title="Ground Energy Eigenfunction, $\infty$-quantum well, $\epsilon=0.1542$")
 except:
- _st_.goboom(380)
+ _st_.goboom(401)
 _st_.blockend()
 try:
- _st_.plot(10, format='notprovided', _p_=plot_inf_sq_eigenstate(1, 0.5, shooting_solver_1d_finite(1, 0, 0.5, .1542, 0.0001), title="Ground Energy Eigenfunction, $\infty $-quantum well"))
+ _st_.plot(10, format='notprovided', _p_=plot_inf_well(1, 0.5, shooting_solver_1d_finite(1, 0, 0.5, .1542, 0.0001), title="Ground Energy Eigenfunction, $\infty $-quantum well, $\epsilon =0.1542$"))
 except:
- _st_.goboom(383)
+ _st_.goboom(404)
 _st_.blockbegin()
 try:
- plot_inf_sq_eigenstate(2, 0.5, shooting_solver_1d_finite(0, 1, 0.5, 0.6179, 0.0001), \
-                        title="First Exctited Energy Eigenfunction, $\infty$-quantum well")
+ plot_inf_well(2, 0.5, shooting_solver_1d_finite(0, 1, 0.5, 0.6179, 0.0001), \
+               title="First Exctited Energy Eigenfunction, $\infty$-quantum well, \
+                      $\epsilon=0.6179$")
 except:
- _st_.goboom(390)
+ _st_.goboom(412)
 _st_.blockend()
 try:
- _st_.plot(11, format='notprovided', _p_=plot_inf_sq_eigenstate(2, 0.5, shooting_solver_1d_finite(0, 1, 0.5, 0.6179, 0.0001), title="First Exctited Energy Eigenfunction, $\infty $-quantum well") )
+ _st_.plot(11, format='notprovided', _p_=plot_inf_well(2, 0.5, shooting_solver_1d_finite(0, 1, 0.5, 0.6179, 0.0001), title="First Exctited Energy Eigenfunction, $\infty $-quantum well, \epsilon =0.6179") )
 except:
- _st_.goboom(394)
+ _st_.goboom(416)
 _st_.blockbegin()
 try:
  hbar = 6.58211928*10**-16 # eV s
+ V_potential = lambda u: C * (u * x0)**2 / 2
  C = 1
  m = 1
- 
  omega = sqrt(C / m)
  x0 = sqrt(hbar / (m * omega))
  
- V_potential = lambda u: C * (u * x0)**2 / 2
- 
  def shooting_solver_qho(psi0, dpsi0, uf, epsilon, delta_u):
      num_steps = (uf - 0) / delta_u
-     data = [(0, psi0, dpsi0)];
-     for i in range(num_steps):
+     data = [(0, psi0, dpsi0)] # initialize data array
+     for i in range(num_steps): # perform forward euler
          u_old = data[i][0]
          psi_old = data[i][1]
          dpsi_old = data[i][2]
          u = u_old + delta_u
+         # Taylor approximations using (10)
          dpsi = dpsi_old - delta_u * (epsilon - u**2) * psi_old
          psi = psi_old + delta_u * dpsi_old
          data.append((u, psi, dpsi))
-     return map(lambda x: (x[0], x[1]), data)
+     return map(lambda x: (x[0], x[1]), data) # return list of (u, psi) tuples
  
- def plot_data_qho(data, n, title):
-     # mirror data based on parity, assumes eigenfunction
-     # has a definite parity
+ def plot_qho(data, n, title, chained=False):
+     if not chained: plt.clf() # only clear if not part of chained call
+     # mirror data across origin, assumes data has a definite parity
      (u, psi0) = data[0]
      if psi0 == 0: # node at 0, odd
          data = map(lambda x: (-x[0], -x[1]), data)[::-1] + data
@@ -244,41 +245,38 @@ try:
          data = map(lambda x: (-x[0], x[1]), data)[::-1] + data
  
      u, psi = [[x[i] for x in data] for i in (0,1)]
-     fig = plt.figure()
-     plt.plot(u, psi)
+     plt.plot(u, psi, label="Euler Approximation")
      plt.title(title)
      plt.xlabel('$u$')
      plt.ylabel("$\\psi_{%s}(u)$" % n)
      plt.axvline(x=0, color='black')
      plt.grid(True)
- 
-     # plt.savefig
-     # uncomment if plotting from sagetex
+     plt.legend()
      plt.save = plt.savefig
      return plt
 except:
- _st_.goboom(458)
+ _st_.goboom(501)
 _st_.blockend()
 _st_.blockbegin()
 try:
- plot_data_qho(shooting_solver_qho(1, 0, 3.8, 1.00005, 0.0001), \
-               n=1, title="QHO Ground State")
+ plot_qho(shooting_solver_qho(1, 0, 3.8, 1.00005, 0.0001), \
+               n=1, title="QHO Ground State, $\epsilon=1.00005$")
 except:
- _st_.goboom(467)
+ _st_.goboom(516)
 _st_.blockend()
 try:
- _st_.plot(12, format='notprovided', _p_=plot_data_qho(shooting_solver_qho(1, 0, 3.9, 1.00005, 0.0001), n=1, title="QHO Ground State"))
+ _st_.plot(12, format='notprovided', _p_=plot_qho(shooting_solver_qho(1, 0, 3.9, 1.00005, 0.0001), n=1, title="QHO Ground State, $\epsilon =1.00005$"))
 except:
- _st_.goboom(469)
+ _st_.goboom(519)
 _st_.blockbegin()
 try:
- plot_data_qho(shooting_solver_qho(0, 1, 3.9, 3, 0.0001), \
-               n=2, title="QHO First Excited State")
+ plot_qho(shooting_solver_qho(0, 1, 3.9, 3, 0.0001), \
+               n=2, title="QHO First Excited State, $\epsilon=3.9$")
 except:
- _st_.goboom(478)
+ _st_.goboom(531)
 _st_.blockend()
 try:
- _st_.plot(13, format='notprovided', _p_=plot_data_qho(shooting_solver_qho(0, 1, 3.9, 3, 0.0001), n=2, title="QHO First Excited"))
+ _st_.plot(13, format='notprovided', _p_=plot_qho(shooting_solver_qho(0, 1, 3.9, 3, 0.0001), n=2, title="QHO First Excited, $\epsilon =3.9$"))
 except:
- _st_.goboom(480)
+ _st_.goboom(534)
 _st_.endofdoc()
