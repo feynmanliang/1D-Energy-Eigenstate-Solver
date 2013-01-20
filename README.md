@@ -1,4 +1,4 @@
-Energy Eigenfunction Solver
+1D Energy Eigenstate Solver
 ===
 By: Feynman Liang
 
